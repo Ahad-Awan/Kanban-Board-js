@@ -8,18 +8,48 @@
   </head>
   </head>
   <body>
-    <h1>Kanban Board</h1>
-    <input type="text" id="serach" placeholder="serach...">
-    <button class="btn">Add</button>
-    <table id="display" border="1">
-        <thead>
-            <tr>
-                <th>Todo</th>
-                <th>In progress</th>
-                <th>Done</th>
-            </tr>
-        </thead>
-    </table>
+    <div class="start">
+        <h1>Kanban Board</h1>
+        <input type="text" id="serach" placeholder="serach...">
+        <button id="btn">Add</button>
+    </div>
+
+
+  <div id="container">
+    <div>
+        <div id="todo">
+        <h1>Todo</h1>
+    </div>
+    <div class="space"></div>
+    </div>
+    <div>
+        <div id="inprogress">
+        <h1>In Progress</h1>
+    </div>
+    <div class="space"></div>
+    </div>
+    <div>
+        <div id="done">
+        <h1>Done</h1>
+    </div>
+    <div class="space"></div>
+    </div>
+   
     <script src="script.js"></script>
   </body>
 </html>
+
+
+        <!-- <div id="addTask">
+    <label for="title">Task Name</label>
+    <input type="text" id="title" required /> <br />
+    <label for="desc">Task Description</label>
+    <input type="text" id="desc" required /> <br />
+    <label for="status">Task Status</label>
+    <select id="status" required>
+        <option value="todo">To Do</option>
+        <option value="inprogress">In Progress</option>
+        <option value="done">Done</option>
+    </select> <br />
+    <button id="btn">Add Task</button>
+  </div> -->
