@@ -3,3 +3,94 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 15px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  width: 250px;
+  padding: 8px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #0056b3;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 85%;
+  margin: 15px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+  width: 33.33%;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+th {
+  color: white;
+  font-size: 16px;
+}
+
+th:nth-child(1) {
+  background-color: #ff4757;
+}
+
+th:nth-child(2) {
+  background-color: #ffa502;
+}
+
+th:nth-child(3) {
+  background-color: #2ed573;
+}
+
+td:nth-child(1) {
+  background-color: #ffecec;
+}
+
+td:nth-child(2) {
+  background-color: #fff3cd;
+}
+
+td:nth-child(3) {
+  background-color: #eaffea;
+}
