@@ -16,20 +16,35 @@ function addTask() {
     status: taskStatus,
   };
   taskArray.push(taskAdd);
-  console.log(taskArray);
-
-  function createDiv() {
-    let title = document.createElement("h3");
-    let desc = document.createElement("p");
+  //   console.log(taskArray);
+  // using map
+  taskArray.map((value) => {
+    let div = document.createElement("div");
+    div.id = "box";
+    let title = document.createElement("h2");
+    let desc = document.createElement("h3");
     let status = document.createElement("p");
-    title.innerHTML = taskTitle;
-    desc.innerHTML = taskDesc;
-    status.innerHTML = taskStatus;
-    todo.appendChild(title);
-    todo.appendChild(desc);
-    todo.appendChild(status);
-  }
-  createDiv();
+    title.innerHTML = `Title: ${value.Title}`;
+    desc.innerHTML = `Description: ${value.desc}`;
+    status.innerHTML = `Status: ${value.status}`;
+    div.appendChild(title);
+    div.appendChild(desc);
+    div.appendChild(status);
+    todo.appendChild(div);
+  });
+
+  //   function createDiv() {
+  //     let title = document.createElement("h2");
+  //     let desc = document.createElement("h3");
+  //     let status = document.createElement("p");
+  //     title.innerHTML = `Title: ${taskTitle}`;
+  //     desc.innerHTML = `Description: ${taskDesc}`;
+  //     status.innerHTML = `Status: ${taskStatus}`;
+  //     todo.appendChild(title);
+  //     todo.appendChild(desc);
+  //     todo.appendChild(status);
+  //   }
+  //   createDiv();
   clearInputs();
 }
 button.addEventListener("click", addTask);
