@@ -36,7 +36,6 @@ body {
 
 input[type="text"] {
   width: 500px;
-  /* height: 41px; */
   padding: 10px;
   border: 2px solid #007bff;
   border-radius: 4px;
@@ -48,7 +47,7 @@ input[type="text"]:focus {
   border-color: #0056b3;
 }
 
-#btn {
+#addButton {
   background-color: #007bff;
   color: white;
   border: none;
@@ -72,6 +71,7 @@ input[type="text"]:focus {
   max-width: 80%;
   margin: auto;
   flex-wrap: wrap;
+  height: auto;
 }
 
 #container > div {
@@ -84,7 +84,7 @@ input[type="text"]:focus {
   font-size: 14px;
 }
 
-#todo {
+.todo {
   background-color: #ff4d4d;
   padding: 5px;
 }
@@ -137,11 +137,10 @@ input[type="text"]:focus {
 }
 
 .space {
-  width: 100%;
-  max-width: 400px;
-  height: 300px;
+  height: 100%;
   background-color: #c3c3c3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: left;
+  padding: 20px 30px;
+  line-height: 25px;
+  color: black;
 }

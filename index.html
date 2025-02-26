@@ -11,7 +11,6 @@
     <div class="start">
         <h1>Kanban Board</h1>
         <input type="text" id="serach" placeholder="serach...">
-        <button id="btn">Add</button>
     </div>
 
     <div id="addTask">
@@ -21,19 +20,19 @@
     <input type="text" id="desc" required /> <br />
     <label for="status">Task Status</label>
     <select id="status" required>
-        <option value="todo">To Do</option>
+        <option value="todo">Todo</option>
         <option value="inprogress">In Progress</option>
         <option value="done">Done</option>
     </select> <br />
-    <button id="btn">Add Task</button>
+    <button id="addButton" class="add">Add Task</button>
   </div>
 
   <div id="container">
-    <div>
-        <div id="todo">
-        <h1>Todo</h1>
-    </div>
-    <div class="space"></div>
+    <div class="todo">
+      <h1>Todo</h1>
+      <div id="todoContainer" class="space">
+        
+      </div>
     </div>
     <div>
         <div id="inprogress">
