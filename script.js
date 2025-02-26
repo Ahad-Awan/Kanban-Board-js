@@ -16,7 +16,9 @@ function addTask() {
     status: taskStatus,
   };
   taskArray.push(taskAdd);
-  //   console.log(taskArray);
+  console.log(taskArray);
+
+  todo.innerHTML = "";
   // using map
   taskArray.map((value) => {
     let div = document.createElement("div");
