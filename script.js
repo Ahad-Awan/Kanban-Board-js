@@ -16,7 +16,7 @@ function addTask() {
     status: taskStatus,
   };
   taskArray.push(taskAdd);
-  console.log(taskArray);
+  //   console.log(taskArray);
 
   todo.innerHTML = "";
   // using map
