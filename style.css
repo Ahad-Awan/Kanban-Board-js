@@ -35,11 +35,12 @@ body {
 }
 
 input[type="text"] {
-  width: 180px;
-  padding: 4px;
+  width: 500px;
+  /* height: 41px; */
+  padding: 10px;
   border: 2px solid #007bff;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 15px;
   outline: none;
 }
 
@@ -55,13 +56,11 @@ input[type="text"]:focus {
   font-size: 18px;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: 8px;
   transition: background 0.3s, transform 0.2s;
 }
 
 #btn:hover {
   background-color: #0056b3;
-  transform: scale(1.05);
 }
 
 #container {
@@ -85,7 +84,6 @@ input[type="text"]:focus {
   font-size: 14px;
 }
 
-/* Task Status Boxes */
 #todo {
   background-color: #ff4d4d;
   padding: 5px;
