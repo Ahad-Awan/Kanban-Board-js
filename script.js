@@ -46,12 +46,22 @@ function displayTask() {
     let title = document.createElement("h2");
     let desc = document.createElement("h3");
     let status = document.createElement("p");
+
+    let editBtn = document.createElement("button");
+    let deleteBtn = document.createElement("button");
+    editBtn.id = "btnEdit";
+    deleteBtn.id = "btnDel";
+    editBtn.innerText = "Edit";
+    deleteBtn.innerText = "Delete";
+
     title.innerHTML = `Title: ${value.Title}`;
     desc.innerHTML = `Description: ${value.desc}`;
     status.innerHTML = `Status: ${value.status}`;
     div.appendChild(title);
     div.appendChild(desc);
     div.appendChild(status);
+    div.appendChild(editBtn);
+    div.appendChild(deleteBtn);
     if (value.status === "todo") {
       todo.appendChild(div);
     } else if (value.status === "inprogress") {
