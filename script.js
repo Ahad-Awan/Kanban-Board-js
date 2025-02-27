@@ -1,5 +1,7 @@
 let button = document.getElementById("addButton");
 let todo = document.getElementById("todoContainer");
+let inprogress = document.getElementById("inprogressContainer");
+let done = document.getElementById("doneContainer");
 let taskArray = [];
 function addTask() {
   let taskTitle = document.getElementById("title").value;
@@ -36,6 +38,8 @@ function addTask() {
 
 function displayTask() {
   todo.innerHTML = "";
+  inprogress.innerHTML = "";
+  done.innerHTML = "";
   taskArray.map((value) => {
     let div = document.createElement("div");
     div.id = "box";
@@ -48,7 +52,13 @@ function displayTask() {
     div.appendChild(title);
     div.appendChild(desc);
     div.appendChild(status);
-    todo.appendChild(div);
+    if (value.status === "todo") {
+      todo.appendChild(div);
+    } else if (value.status === "inprogress") {
+      inprogress.appendChild(div);
+    } else if (value.status === "done") {
+      done.appendChild(div);
+    }
   });
 }
 
