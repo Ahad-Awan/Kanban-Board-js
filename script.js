@@ -16,7 +16,14 @@ function addTask() {
     return;
   }
 
-  if (editIndex !== null) {
+  if (editIndex === null) {
+    let taskAdd = {
+      Title: taskTitle,
+      desc: taskDesc,
+      status: taskStatus,
+    };
+    taskArray.push(taskAdd);
+  } else {
     taskArray[editIndex] = {
       Title: taskTitle,
       desc: taskDesc,
@@ -24,13 +31,6 @@ function addTask() {
     };
     button.innerHTML = "Add Task";
     editIndex = null;
-  } else {
-    let taskAdd = {
-      Title: taskTitle,
-      desc: taskDesc,
-      status: taskStatus,
-    };
-    taskArray.push(taskAdd);
   }
 
   displayTask();
