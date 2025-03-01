@@ -63,12 +63,18 @@ function displayTask() {
     div.appendChild(status);
     div.appendChild(editBtn);
     div.appendChild(deleteBtn);
+
     editBtn.addEventListener("click", () => {
       document.getElementById("title").value = value.Title;
       document.getElementById("desc").value = value.desc;
       document.getElementById("status").value = value.status;
       button.innerHTML = "Update task";
       editIndex = index;
+    });
+
+    deleteBtn.addEventListener("click", function () {
+      taskArray.splice(index, 1);
+      displayTask();
     });
 
     if (value.status === "todo") {
