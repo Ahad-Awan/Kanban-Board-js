@@ -3,6 +3,9 @@ let todo = document.getElementById("todoContainer");
 let inprogress = document.getElementById("inprogressContainer");
 let done = document.getElementById("doneContainer");
 let taskArray = [];
+
+let editIndex = null;
+
 function addTask() {
   let taskTitle = document.getElementById("title").value;
   let taskDesc = document.getElementById("desc").value;
@@ -12,39 +15,37 @@ function addTask() {
     alert("Please enter task name, description and status.");
     return;
   }
-  let taskAdd = {
-    Title: taskTitle,
-    desc: taskDesc,
-    status: taskStatus,
-  };
-  taskArray.push(taskAdd);
+
+  if (editIndex !== null) {
+    taskArray[editIndex] = {
+      Title: taskTitle,
+      desc: taskDesc,
+      status: taskStatus,
+    };
+    button.innerHTML = "Add Task";
+    editIndex = null;
+  } else {
+    let taskAdd = {
+      Title: taskTitle,
+      desc: taskDesc,
+      status: taskStatus,
+    };
+    taskArray.push(taskAdd);
+  }
+
   displayTask();
   clearInputs();
-  //   console.log(taskArray);
-
-  //   function createDiv() {
-  //     let title = document.createElement("h2");
-  //     let desc = document.createElement("h3");
-  //     let status = document.createElement("p");
-  //     title.innerHTML = `Title: ${taskTitle}`;
-  //     desc.innerHTML = `Description: ${taskDesc}`;
-  //     status.innerHTML = `Status: ${taskStatus}`;
-  //     todo.appendChild(title);
-  //     todo.appendChild(desc);
-  //     todo.appendChild(status);
-  //   }
-  //   createDiv();
 }
 
 function displayTask() {
   todo.innerHTML = "";
   inprogress.innerHTML = "";
   done.innerHTML = "";
-  taskArray.map((value) => {
+  taskArray.map((value, index) => {
     let div = document.createElement("div");
     div.id = "box";
     let title = document.createElement("h2");
-    let desc = document.createElement("h3");
+    let desc = document.createElement("p");
     let status = document.createElement("p");
 
     let editBtn = document.createElement("button");
@@ -62,6 +63,14 @@ function displayTask() {
     div.appendChild(status);
     div.appendChild(editBtn);
     div.appendChild(deleteBtn);
+    editBtn.addEventListener("click", () => {
+      document.getElementById("title").value = value.Title;
+      document.getElementById("desc").value = value.desc;
+      document.getElementById("status").value = value.status;
+      button.innerHTML = "Update task";
+      editIndex = index;
+    });
+
     if (value.status === "todo") {
       todo.appendChild(div);
     } else if (value.status === "inprogress") {
