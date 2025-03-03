@@ -2,6 +2,7 @@ let button = document.getElementById("addButton");
 let todo = document.getElementById("todoContainer");
 let inprogress = document.getElementById("inprogressContainer");
 let done = document.getElementById("doneContainer");
+let searchInput = document.getElementById("serach");
 let taskArray = [];
 
 let editIndex = null;
@@ -37,11 +38,11 @@ function addTask() {
   clearInputs();
 }
 
-function displayTask() {
+function displayTask(arr = taskArray) {
   todo.innerHTML = "";
   inprogress.innerHTML = "";
   done.innerHTML = "";
-  taskArray.map((value, index) => {
+  arr.map((value, index) => {
     let div = document.createElement("div");
     div.id = "box";
     let title = document.createElement("h2");
@@ -86,6 +87,14 @@ function displayTask() {
     }
   });
 }
+
+searchInput.addEventListener("input", () => {
+  let input = searchInput.value.toLowerCase();
+  let filteredArr = taskArray.filter((taskAdd) =>
+    taskAdd.Title.toLowerCase().includes(input)
+  );
+  displayTask(filteredArr);
+});
 
 function clearInputs() {
   document.getElementById("title").value = "";
