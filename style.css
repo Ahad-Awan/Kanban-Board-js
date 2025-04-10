@@ -196,3 +196,11 @@ input[type="text"]:focus {
 #btnDel:hover {
   background-color: #e2152a;
 }
+
+#box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  cursor: move;
+}

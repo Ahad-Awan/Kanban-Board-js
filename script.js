@@ -42,9 +42,17 @@ function displayTask(arr = taskArray) {
   todo.innerHTML = "";
   inprogress.innerHTML = "";
   done.innerHTML = "";
+
   arr.map((value, index) => {
     let div = document.createElement("div");
     div.id = "box";
+    div.classList.add("task");
+    div.draggable = true;
+
+    div.addEventListener("dragstart", (e) => {
+      e.dataTransfer.setData("text/plain", index);
+    });
+
     let title = document.createElement("h2");
     let desc = document.createElement("p");
     let status = document.createElement("p");
@@ -87,6 +95,22 @@ function displayTask(arr = taskArray) {
     }
   });
 }
+
+["todoContainer", "inprogressContainer", "doneContainer"].forEach((id) => {
+  let container = document.getElementById(id);
+
+  container.addEventListener("dragover", (e) => {
+    e.preventDefault();
+  });
+
+  container.addEventListener("drop", (e) => {
+    e.preventDefault();
+    let index = e.dataTransfer.getData("text/plain");
+    let newStatus = id.replace("Container", "");
+    taskArray[index].status = newStatus;
+    displayTask();
+  });
+});
 
 searchInput.addEventListener("input", () => {
   let input = searchInput.value.toLowerCase();
