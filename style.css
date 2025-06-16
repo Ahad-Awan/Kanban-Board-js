@@ -204,3 +204,29 @@ input[type="text"]:focus {
   background-color: white;
   cursor: move;
 }
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+#addNewTaskBtn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px;
+  width: 40%;
+}
+
+#addNewTaskBtn:hover {
+  background-color: #0056b3;
+}

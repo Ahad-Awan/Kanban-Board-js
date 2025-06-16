@@ -3,9 +3,26 @@ let todo = document.getElementById("todoContainer");
 let inprogress = document.getElementById("inprogressContainer");
 let done = document.getElementById("doneContainer");
 let searchInput = document.getElementById("serach");
-let taskArray = [];
+let addNewTaskBtn = document.getElementById("addNewTaskBtn");
+let addTaskForm = document.getElementById("addTask");
 
+let taskArray = [];
 let editIndex = null;
+
+addTaskForm.style.display = "none"; // Hide by default
+
+addNewTaskBtn.addEventListener("click", () => {
+  if (addTaskForm.style.display === "none") {
+    addTaskForm.style.display = "flex";
+    addNewTaskBtn.textContent = "Close Task Form";
+  } else {
+    addTaskForm.style.display = "none";
+    addNewTaskBtn.textContent = "Add New Task";
+    clearInputs();
+    button.innerHTML = "Add Task";
+    editIndex = null;
+  }
+});
 
 function addTask() {
   let taskTitle = document.getElementById("title").value;
@@ -77,8 +94,10 @@ function displayTask(arr = taskArray) {
       document.getElementById("title").value = value.Title;
       document.getElementById("desc").value = value.desc;
       document.getElementById("status").value = value.status;
-      button.innerHTML = "Update task";
+      button.innerHTML = "Update Task";
       editIndex = index;
+      addTaskForm.style.display = "flex";
+      addNewTaskBtn.textContent = "Close Task Form";
     });
 
     deleteBtn.addEventListener("click", function () {

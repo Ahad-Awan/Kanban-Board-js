@@ -4,49 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="start">
-        <h1>Kanban Board</h1>
-        <input type="text" id="serach" placeholder="serach...">
+      <h1>Kanban Board</h1>
+      <input type="text" id="serach" placeholder="search..." />
+      <br />
+      <button id="addNewTaskBtn">Add New Task</button>
     </div>
 
     <div id="addTask">
-    <label for="title">Task Name</label>
-    <input type="text" id="title" required /> <br />
-    <label for="desc">Task Description</label>
-    <input type="text" id="desc" required /> <br />
-    <label for="status">Task Status</label>
-    <select id="status" required>
+      <label for="title">Task Name</label>
+      <input type="text" id="title" required /> <br />
+      <label for="desc">Task Description</label>
+      <input type="text" id="desc" required /> <br />
+      <label for="status">Task Status</label>
+      <select id="status" required>
         <option value="todo">Todo</option>
         <option value="inprogress">In Progress</option>
         <option value="done">Done</option>
-    </select> <br />
-    <button id="addButton" class="add">Add Task</button>
-  </div>
+      </select>
+      <br />
+      <button id="addButton" class="add">Add Task</button>
+    </div>
 
-  <div id="container">
-    <div class="todo">
-      <h1>Todo</h1>
-      <div id="todoContainer" class="space">   
+    <div id="container">
+      <div class="todo">
+        <h1>Todo</h1>
+        <div id="todoContainer" class="space"></div>
+      </div>
+      <div class="inprogress">
+        <h1>In Progress</h1>
+        <div id="inprogressContainer" class="space"></div>
+      </div>
+      <div class="done">
+        <h1>Done</h1>
+        <div id="doneContainer" class="space"></div>
       </div>
     </div>
-    <div class="inprogress">
-      <h1>In Progress</h1>
-      <div id="inprogressContainer" class="space">   
-      </div>
-    </div>
-    <div class="done">
-      <h1>Done</h1>
-      <div id="doneContainer" class="space">   
-      </div>
-    </div>
-   
+
+    <footer>© 2025 Made by Ahad. All rights reserved.</footer>
+
     <script src="script.js"></script>
   </body>
 </html>
-
-
-    
